@@ -1,0 +1,15 @@
+{
+  "name": "zyte-ai",
+  "owner": {
+    "name": "Zyte Group Ltd"
+  },
+  "metadata": {
+    "description": "Zyte Coding Agent Add-Ons marketplace for GitHub Copilot CLI."
+  },
+  "plugins": [
+    {
+      "name": "zyte-web-data",
+      "source": "./"
+    }
+  ]
+}
