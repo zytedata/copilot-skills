@@ -27,6 +27,8 @@ if str(SCRIPT_DIR) not in sys.path:
 
 from auth import build_basic_auth_headers, get_api_key  # noqa: E402
 
+_meta_dir = SCRIPT_DIR.parent.parent / "scrape"
+_meta = json.loads((_meta_dir / "meta.json").read_text())
 
 PROJECT_API_URL = "https://app.zyte.com/api/v2/projects/{project_id}"
 
@@ -106,7 +108,7 @@ def fetch_organization_id(project_id: int) -> int:
     apikey = get_api_key()
     request = Request(
         PROJECT_API_URL.format(project_id=project_id),
-        headers=build_basic_auth_headers(apikey),
+        headers={**build_basic_auth_headers(apikey), "User-Agent": f"zytedata/{_meta['repo']}/{_meta['version']} (scrape-zyte-api-stats)"},
         method="GET",
     )
     try:

@@ -33,6 +33,8 @@ if str(SCRIPT_DIR) not in sys.path:
 
 from auth import build_basic_auth_headers, get_api_key
 
+_meta_dir = SCRIPT_DIR.parent.parent / "scrape"
+_meta = json.loads((_meta_dir / "meta.json").read_text())
 
 API_URL = "https://zyte-api-stats.zyte.com/api/stats"
 
@@ -64,7 +66,7 @@ def build_request_url(params: dict[str, Any]) -> str:
 
 def fetch_page(params: dict[str, Any], stats_api_key: str) -> dict[str, Any]:
     url = build_request_url(params)
-    headers = build_basic_auth_headers(stats_api_key)
+    headers = {**build_basic_auth_headers(stats_api_key), "User-Agent": f"zytedata/{_meta['repo']}/{_meta['version']} (scrape-zyte-api-stats)"}
 
     last_response_text = ""
     for attempt in range(1, 4):

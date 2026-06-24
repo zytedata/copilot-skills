@@ -1,6 +1,6 @@
 ---
 name: scrape-analyze-page
-description: Extract structured data (all available fields with values) from a page saved locally as an HTML file, optionally following a schema. Use this skill only to process already downloaded files. When invoking, pass the user's full request verbatim as args — do not pre-parse file paths and don't rephrase it.
+description: Extract structured data (all available fields with values) from a page saved locally as an HTML file, optionally following a schema. Use this skill only to process already downloaded files. Do not invoke when the user provides a URL. When invoking, pass the user's full request verbatim as args — do not pre-parse file paths and don't rephrase it.
 allowed-tools: Skill, Bash, Read, Write
 ---
 

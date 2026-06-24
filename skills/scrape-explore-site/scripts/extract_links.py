@@ -23,8 +23,6 @@ Without --group, outputs one object per link:
 Timing info is printed to stderr.
 """
 
-__version__ = "0.1.0"
-
 import argparse
 import json
 import os

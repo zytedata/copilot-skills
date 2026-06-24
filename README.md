@@ -9,12 +9,21 @@
 </p>
 
 <p align="center">
-	<img src="https://img.shields.io/badge/version-0.1.0-blue" alt="version 0.1.0">
-	<img src="https://img.shields.io/badge/license-Zyte%20EULA-lightgrey" alt="Zyte EULA">
-	<img src="https://img.shields.io/github/stars/zytedata/copilot-skills?style=social" alt="GitHub stars">
+	<a href="https://github.com/zytedata/copilot-skills/releases/tag/0.2.0">
+		<img src="https://img.shields.io/badge/version-0.2.0-blue" alt="Version 0.2.0">
+	</a>
+	<a href="https://github.com/zytedata/copilot-skills/blob/main/LICENSE.md">
+		<img src="https://img.shields.io/badge/license-Zyte%20EULA-b02cce" alt="Zyte EULA">
+	</a>
+	
+	<a href="https://github.com/zytedata/copilot-skills">
+		<img src="https://img.shields.io/github/stars/zytedata/copilot-skills?style=social" alt="GitHub stars">
+	</a>
 </p>
 
 ---
+
+> Not using exclusively GitHub Copilot CLI? See [Zyte Coding Agent Add-Ons](https://docs.zyte.com/ai-code.html) for alternatives.
 
 ## Install
 
@@ -120,7 +129,7 @@ Project dependencies (scrapy, scrapy-poet, scrapy-zyte-api, web-poet, extruct, p
 Any scraping prompt triggers the skill automatically. For example:
 
 ```
-/scrape https://books.toscrape.com/ products
+Scrape books.toscrape.com
 ```
 
 The plugin walks you through schema approval interactively, then generates a complete, tested Scrapy project.

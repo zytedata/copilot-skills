@@ -55,7 +55,7 @@ Ask the user how to obtain a detail page via `AskUserQuestion`:
 
 **If the user picks "Provide a URL"**: follow up with a plain-text prompt — "Paste the detail page URL." — and wait for their next message. Then download that page using `download.py`:
 ```bash
-uv run ${CLAUDE_SKILL_DIR}/../scrape-explore-site/scripts/download.py --log-file .scrape/.work/{site_name}/explore/download.log <<'EOF'
+uv run ${CLAUDE_SKILL_DIR}/../scrape-explore-site/scripts/download.py --skill scrape-define --log-file .scrape/.work/{site_name}/explore/download.log <<'EOF'
 [{"url": "USER_URL", "output_dir": ".scrape/.work/{site_name}/explore/pages/detail-1", "page_type": "detail"}]
 EOF
 ```

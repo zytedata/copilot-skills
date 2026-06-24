@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """One-shot HTTP server that patches data.js, opens the review page, and receives feedback."""
 
-__version__ = "0.1.0"
-
 import pathlib
 import sys
 import threading

@@ -1,6 +1,6 @@
 ---
 name: scrape
-description: End-to-end web scraping workflow — from URL to working spider with web-poet page objects
+description: End-to-end web scraping workflow — from URL to working spider with web-poet page objects. Use this for full-site or multiple-page crawls, not single-page extractions.
 argument-hint: "[url] [what to extract]"
 allowed-tools: Skill, Agent, Bash, Read, Write, TaskCreate, TaskUpdate, TaskList, TaskGet
 ---

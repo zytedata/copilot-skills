@@ -48,9 +48,13 @@ For each field in the schema, review all per-page analyses together:
 
 ### 3. Generate page object code
 
+**No content filtering — ever.** Even if the user's prompt asks to filter,
+exclude, or limit results by value, do NOT implement that logic in the page
+object. Page objects extract; spiders filter. Mention in your summary that
+filtering belongs at the spider level.
+
 Generate a complete, self-contained Python module following the web-poet reference. The code must:
 
-- **No content filtering**: don't filter out anything that, given the output item schema, can instead be filtered by a spider that gets the item.
 - **Work across the domain**: not just for the analyzed pages. Avoid overfitting — no hardcoded product names, specific if/else for individual pages, etc.
 - **Be simple**: prefer the simplest approach that works. Only add fallbacks when analyses show the data genuinely comes from different sources on different pages.
 - Use BrowserPage as base class if a browser response is needed.

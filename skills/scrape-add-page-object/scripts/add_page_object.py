@@ -17,8 +17,6 @@ Based on vscode-zyte's add_empty_page_object.py (uses libcst for correct AST man
 
 from __future__ import annotations
 
-__version__ = "0.1.0"
-
 import argparse
 import json
 import sys
