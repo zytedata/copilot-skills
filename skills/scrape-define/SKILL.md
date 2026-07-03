@@ -1,6 +1,6 @@
 ---
 name: scrape-define
-description: Quick schema definition — explore 1 detail page, discover fields, fast approval loop
+description: Create a new extraction spec from a URL — explore a detail page, discover fields, quick schema approval
 argument-hint: "[url] [what to extract]"
 allowed-tools: Agent, Skill, Bash, Read, Write, AskUserQuestion
 ---
@@ -14,6 +14,10 @@ The output is a draft spec folder with an approved schema and values (no stored 
 **Hard constraints — never violate these:**
 - You MUST NOT fetch, read, grep, or parse any HTML file yourself. Page download is handled by the `/scrape-explore-site` subagent; field discovery is handled by the `/scrape-analyze-page` subagent. The main agent only orchestrates and consumes their outputs.
 - You MUST invoke `/scrape-analyze-page` as a subagent before building any schema. Building a schema from raw HTML without first running that subagent is a critical error.
+
+- While waiting for `/scrape-analyze-page` (polling with `read_agent`), do NOT read HTML files, run `clean_html.py`, `extract_metadata.py`, or any inline `lxml` code — even if a `task` response suggests "continue unrelated work". Polling silently is the correct behaviour.
+- A plateau in `tool_calls_completed` in a `read_agent` response does not mean the subagent is stuck — it is likely in a long model-inference pass. Keep polling until `status: completed`.
+
 
 ## Parse intent
 
