@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh -c 'if [ -n \"${COPILOT_PLUGIN_ROOT:-}\" ]; then uv run --no-project \"$COPILOT_PLUGIN_ROOT/skills/scrape/scripts/feedback_state.py\" hook --source copilot_cli; fi'"
+          }
+        ]
+      }
+    ]
+  }
+}
