@@ -1,6 +1,16 @@
-This file is 105 lines long; read all of them.
+This file is 115 lines long; read all of them.
 
 # Changelog
+
+## 0.4.1 (2026-10-26)
+
+### Fixed
+
+- Skill scripts now require dependency versions without known security
+  vulnerabilities, e.g. brotli 1.2.1 for
+  [CVE-2026-111497](https://github.com/advisories/GHSA-9v8h-qqgm-4m35). Script
+  environments that uv had already created with older versions are upgraded
+  the next time each script runs.
 
 ## 0.4.0 (2026-10-05)
 
